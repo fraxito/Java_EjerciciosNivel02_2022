@@ -24,6 +24,8 @@ public class EjerciciosNivel02 {
             {'G', 'A', 'T', 'O'}, 
             {'M', 'A', 'T', 'O'}, 
         };
+        EjerciciosNivel02 e = new EjerciciosNivel02();
+        e.esEscaleraPalabras(listaPalabras);
         
     }
     
