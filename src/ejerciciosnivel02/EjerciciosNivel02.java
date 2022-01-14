@@ -13,8 +13,7 @@ public class EjerciciosNivel02 {
                     contador++;
                 }
             }
-            if (contador != 1){ //si es distinto de uno es 
-                                //porque se diferencian en más de un caracter
+            if (contador != 1){ //si es distinto de uno es porque se diferencian en más de un caracter
                 return false;
             }
         }
