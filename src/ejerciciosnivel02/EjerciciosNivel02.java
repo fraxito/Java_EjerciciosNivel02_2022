@@ -20,10 +20,41 @@ public class EjerciciosNivel02 {
         return true;
     }
     
+    public boolean esEscaleraDePalabras2(char[][] lista){
+        for (int j=0; j<lista.length-1; j++){
+            int contador = 0;
+            for (int i=0; i<lista[0].length; i++){
+                if (lista[j][i] != lista[j+1][i]){
+                   contador++;
+                }
+            }
+            if (contador != 1){
+                return false;
+            }
+        }
+        return true;
+    }
+
     
-    /**
-     * @param args the command line arguments
-     */
+    private int costeErroresADN (String uno, String dos) {
+        int coste = 0;
+        for (int i=0; i< uno.length(); i++){
+            if (uno.charAt(i) == '-' || dos.charAt(i) == '-'){coste += 2;}
+            else{
+                if (uno.charAt(i) == 'C' && dos.charAt(i) != 'G'){coste++;}
+                if (uno.charAt(i) == 'G' && dos.charAt(i) != 'C'){coste++;}
+                if (uno.charAt(i) == 'A' && dos.charAt(i) != 'T'){coste++;}
+                if (uno.charAt(i) == 'T' && dos.charAt(i) != 'A'){coste++;}
+            }
+        }
+        return coste;
+    }
+    
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         char [][] listaPalabras = { 
             {'P', 'A', 'T', 'A'}, 
@@ -36,7 +67,11 @@ public class EjerciciosNivel02 {
         };
         EjerciciosNivel02 e = new EjerciciosNivel02();
         System.out.println(e.esEscaleraPalabras(listaPalabras));
+        System.out.println(e.esEscaleraDePalabras2(listaPalabras));
         
+         System.out.println(e.costeErroresADN("ACGT", "TGCA"));
+         System.out.println(e.costeErroresADN("A-C-G-T-ACGT", "TTGGCCAATGCA"));
+         System.out.println(e.costeErroresADN("AAAAAAAA", "TTTATTTT"));
     }
     
 }
